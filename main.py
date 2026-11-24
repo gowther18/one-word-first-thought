@@ -44,6 +44,10 @@ def check_word(word: str) -> None:
         raise SystemExit("entry word is only white space")
     if len(word.split()) != 1:
         raise SystemExit(f"entry must be exactly one word, got {word!r}")
+    if not word.isalpha():
+        raise SystemExit(
+            f"entry word must contain only letters, got {word!r}"
+        )
 
 
 def main() -> None:
